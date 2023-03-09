@@ -10,7 +10,6 @@ function currentData() {
     message: message.value,
   });
   localStorage.setItem('feedback-form-state', SetData);
-  console.log(`email: ${email.value}, message: ${message.value}`);
 }
 
 const savedFormData = localStorage.getItem('feedback-form-state');
@@ -25,6 +24,13 @@ form.addEventListener('submit', sendSumbit);
 
 function sendSumbit(e) {
   e.preventDefault();
+  const { email, message } = form.elements;
+  const SetData = JSON.stringify({
+    email: email.value,
+    message: message.value,
+  });
+  localStorage.setItem('feedback-form-state', SetData);
+  console.log(`email: ${email.value}, message: ${message.value}`);
   localStorage.removeItem('feedback-form-state');
   form.reset();
 }

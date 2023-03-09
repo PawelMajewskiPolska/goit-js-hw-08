@@ -11,6 +11,7 @@ function currentData() {
   });
   localStorage.setItem('feedback-form-state', SetData);
 }
+
 const savedFormData = localStorage.getItem('feedback-form-state');
 if (savedFormData) {
   const getSavedData = JSON.parse(savedFormData);

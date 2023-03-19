@@ -30,6 +30,7 @@ function sendSumbit(e) {
     message: message.value,
   });
   localStorage.setItem('feedback-form-state', SetData);
+  console.log(SetData);
   console.log(`email: ${email.value}, message: ${message.value}`);
   localStorage.removeItem('feedback-form-state');
   form.reset();
